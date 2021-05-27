@@ -5,31 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Examensarbete"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="582.627">
-    <Grid Margin="0,0,2,0">
-        <Label Content="Nyhetsbot (BETA)" HorizontalAlignment="Left" Margin="143,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="36" FontFamily="Bahnschrift Light"/>
-        <Button x:Name="generatebutton" Content="Generera Artikel" HorizontalAlignment="Left" Margin="41,102,0,0" VerticalAlignment="Top" Width="204" Click="Button_Click" Height="45"/>
-        <Button Content="Clear Database" HorizontalAlignment="Left" Margin="41,202,0,0" VerticalAlignment="Top" Width="204" Height="45" Click="Button_Click_1"/>
-        <Button Content="Collect Data" HorizontalAlignment="Left" Margin="41,152,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.5,0.5" Height="45" Click="Button_Click_2"/>
+        WindowStyle="None"
+        AllowsTransparency="true"
+        Background="Transparent"
+        MouseDown="Window_MouseDown"
+        Title="Control Panel" Height="315.199" Width="582.627">
+    <Border Margin="5" Padding="5"  Background="#38a0ff" CornerRadius="10">
+        <Grid Margin="0,0,2,0">
+            <Label Content="Newsbot" HorizontalAlignment="Left" Margin="41,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="36" FontFamily="Bahnschrift Light" Foreground="White"/>
+            <Button x:Name="generatebutton" Content="Generate Article" HorizontalAlignment="Left" Margin="41,102,0,0" VerticalAlignment="Top" Width="204" Click="Button_Click" Height="45" Background="Orange" Foreground="White"  FontSize="14" Style="{StaticResource ButtonRoundedCorner}"/>
+            <Button Content="Clear Database" HorizontalAlignment="Left" Margin="41,202,0,0" VerticalAlignment="Top" Width="204" Height="45" Click="Button_Click_1" Background="Orange" Foreground="White"  FontSize="14" Style="{StaticResource ButtonRoundedCorner}"/>
+            <Button Content="Collect Data" HorizontalAlignment="Left" Margin="41,152,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.5,0.5" Height="45" Click="Button_Click_2" Background="Orange" Foreground="White"  FontSize="14" Style="{StaticResource ButtonRoundedCorner}"/>
 
 
-        <ScrollViewer Margin="273,102,0,88">
-            <TextBlock x:Name="log" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="223" Width="279" RenderTransformOrigin="0.5,0.5">
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="0.412"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="0.946"/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-            </TextBlock>
-        </ScrollViewer>
-
-
-
-
-        <Button Content="Test&#xD;&#xA;" HorizontalAlignment="Left" Margin="41,347,0,0" VerticalAlignment="Top" Width="124" Height="33" Click="Button_Click_3"/>
-
-    </Grid>
+            <ScrollViewer Margin="279,102,10,37" BorderThickness="1" BorderBrush="white" Background="White">
+                <TextBlock x:Name="log" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  Width="279" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="0.412"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.946"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </ScrollViewer>
+            <Button Content="X" HorizontalAlignment="Left" Margin="539,0,0,0" VerticalAlignment="Top" Width="22" Foreground="White" Background="#3192eb" BorderThickness="0" Click="Button_Click_4"/>
+            <Button Content="🗕" HorizontalAlignment="Left" Margin="517,0,0,0" VerticalAlignment="Top" Width="22" Foreground="White" Background="#3192eb" BorderThickness="0"  Height="18" Click="Button_Click_5"/>
+        </Grid>
+    </Border>
 </Window>
+    
+    
+

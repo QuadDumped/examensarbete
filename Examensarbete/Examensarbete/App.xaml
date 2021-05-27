@@ -4,6 +4,56 @@
              xmlns:local="clr-namespace:Examensarbete"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="ButtonRoundedCorner" TargetType="Button" >
+            <Setter Property="Background" Value="Silver"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="7" Background="{TemplateBinding Background}" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+        <Style x:Key="TransparentStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonRoundedCorner}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="7" Background="{TemplateBinding Background}" BorderThickness="1">
+                            <Border.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Green"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="DarkGoldenrod"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+
+                           <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                               
+                           </ContentPresenter>
+                            
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
